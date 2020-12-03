@@ -30,10 +30,17 @@
         <div class="movie_box" v-for="element in movies">
             <div class="title">{{element.title}}</div>
             <div class="original_title">{{element.original_title}}</div>
-            <div class="language">{{element.original_language}}</div>
+            <div class="language" v-if="element.original_language == 'it'">italiano</div>
+            <div class="language" v-else-if="element.original_language == 'en'">inglese</div>
+            <div class="language" v-else-if="element.original_language == 'fr'">francese</div>
+            <div class="language" v-else-if="element.original_language == 'es'">spagnolo</div>
+            <div class="language" v-else-if="element.original_language == 'sv'">svedese</div>
+            <div class="language" v-else-if="element.original_language == 'hr'">Ungherese</div>
+            <div class="language" v-else-if="element.original_language == 'de'">Tedesco</div>
+            <div class="language" v-else-if="element.original_language == ''">Language Unavailable</div>
             <div class="vote_average">{{element.vote_average}}</div>
             <div class="stars">
-              <span v-if="element.vote_average > 8">
+              <span v-if="element.vote_average > 8" >
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -68,8 +75,6 @@
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
               </span>
-
-
 
             </div>
         </div>

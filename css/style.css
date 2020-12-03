@@ -63,6 +63,14 @@ header{
  align-items:center;
 }
 
+.stars{
+  color:#ffe53d;
+}
+
+span i >.far{
+  border: solid 1px #67708a;
+
+}
 /*
 
 nav{
