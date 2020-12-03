@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" charset="utf-8"></script>
+
+    <title>Boolflix</title>
+  </head>
+
+  <body>
+
+
+
+
+    <main>
+      <div id="app">
+        <header>
+          <h2>Boolflix</h2>
+        
+          <input v-model="searched_movie" @keyup.enter="find"   placeholder="Find your movie" type="text" name="" value="">
+        </header>
+
+
+
+        <!-- div  disc box che viene clonato col ciclo per ogni
+        elemento in album( album viene riempito da axios) -->
+        <div class="movie_box" v-for="film in movies">
+
+            <div class="title">{{film.title}}</div>
+            <!-- <div class="original_title">{{element.original_title}}</div>
+            <div class="language">{{element.language}}</div>
+            <div class="vote_average">{{element.vote_average}}</div> -->
+        </div>
+      </div>
+
+    </main>
+
+     <script src="js/script.js" charset="utf-8"></script>
+
+  </body>
+
+</html>

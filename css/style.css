@@ -1,0 +1,96 @@
+/* -----------------  DEBUG -------------  */
+div, main, aside, section, li{
+  /* border: solid 1px red; */
+  /* background-color: pink; */
+}
+
+ /* -----------------  DEBUG -------------  */
+
+
+/* -----------------  OVERALL  -------------  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+img {
+  width:100px;
+  height: 100px;
+  margin: 10px;
+}
+
+
+input:focus,select:focus,textarea:focus,button:focus {
+    outline: none;
+}
+
+body{
+  /* display: flex;
+  justify-content: center; */
+  color:white;
+  width: 100vw;
+  height: 100vh;
+  background-color:#1e2d3b;
+  text-align: center;
+}
+header{
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:black;
+}
+/*
+
+nav{
+  width: 100%;
+}
+
+.pick{
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selection{
+  margin: 10px 0;
+  border-style: none;
+
+}
+
+#discografia{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 90%;
+}
+
+.disc_box{
+ width: calc(20% - 10px);
+ height: 250px;
+ background-color: #2e3a46;
+ margin: 10px 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ align-items:center;
+}
+
+.title{
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.author, .year{
+  color: #92989e;
+} */
