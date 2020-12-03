@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" charset="utf-8"></script>
 
@@ -21,20 +21,57 @@
       <div id="app">
         <header>
           <h2>Boolflix</h2>
-        
+
           <input v-model="searched_movie" @keyup.enter="find"   placeholder="Find your movie" type="text" name="" value="">
         </header>
 
-
-
         <!-- div  disc box che viene clonato col ciclo per ogni
         elemento in album( album viene riempito da axios) -->
-        <div class="movie_box" v-for="film in movies">
+        <div class="movie_box" v-for="element in movies">
+            <div class="title">{{element.title}}</div>
+            <div class="original_title">{{element.original_title}}</div>
+            <div class="language">{{element.original_language}}</div>
+            <div class="vote_average">{{element.vote_average}}</div>
+            <div class="stars">
+              <span v-if="element.vote_average > 8">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </span>
+              <span v-else-if="element.vote_average > 6">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </span>
+              <span v-else-if="element.vote_average > 4">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </span>
+              <span v-else-if="element.vote_average > 2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </span>
+              <span v-else>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </span>
 
-            <div class="title">{{film.title}}</div>
-            <!-- <div class="original_title">{{element.original_title}}</div>
-            <div class="language">{{element.language}}</div>
-            <div class="vote_average">{{element.vote_average}}</div> -->
+
+
+            </div>
         </div>
       </div>
 

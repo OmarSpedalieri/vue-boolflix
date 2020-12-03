@@ -36,27 +36,5 @@ var app = new Vue({
      console.log("Movies:", this.movies);
 
    })}}
-  // },
-  // methods:{
-  //   genrePicker(){
-  //     if (this.type === "all") {
-  //       this.albums_picked = this.albums;
-  //     }else{
-  //       this.albums_picked = this.albums.filter(item => item.genre === this.type);
-  //     }
-  //   }
-  // },
-  // computed:{
-  //   genreFilter : function(){
-  //     return this.albums.filter((album) => {
-  //
-  //      if (this.type === "all") {
-  //        return this.albums;
-  //      } else {
-  //        return album.genre === this.type;
-  //      }
-  //    })
-  //   }
-  // }
 
 });
