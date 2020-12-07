@@ -61,6 +61,7 @@ header img{
   height: 90%;
 }
 .movie_box{
+  position:relative;
  /* width: calc(20% - 10px); */
  /* height: 250px; */
  background-color: #2e3a46;
@@ -69,6 +70,9 @@ header img{
  flex-direction: column;
  justify-content: flex-start;
  align-items:center;
+ transition: all ease-in-out 1s;
+
+
 }
 
 .stars{
@@ -89,6 +93,33 @@ span i >.far{
 
 .white{
   color:white;
+}
+
+.info{
+  background-color: black;
+  opacity: .7;
+  width: 342px;
+  height: 500px;
+  margin: 10px 10px;
+  display:none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:center;
+
+
+}
+
+.movie_box:hover  .cover{
+  transform:scale(1.15);
+  filter: blur(4px);
+}
+.movie_box:hover .info{
+  transform:scale(1.15);
+  z-index: 100;
+  display: flex;
+  position: absolute;
+  left:0;
+  top:0;
 }
 /*
 

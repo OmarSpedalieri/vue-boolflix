@@ -28,23 +28,21 @@ var app = new Vue({
   methods:{
 
     findMovie:function () {
-    axios.get(movie_db,{params:{query:this.searched_movie,api_key:api_key}})
-    .then(answer => {
-     this.movies = answer.data.results;
-     this.movieResults();
+      axios.get(movie_db,{params:{query:this.searched_movie,api_key:api_key}})
+      .then(answer => {
+       this.movies = answer.data.results;
+       this.movieResults();
     })},
 
     findTvseries:function () {
-    axios.get(series_db,{params:{query:this.searched_movie,api_key:api_key}})
-    .then(answer => {
-     this.series = answer.data.results;
-     this.tvSeriesResults();
-
+      axios.get(series_db,{params:{query:this.searched_movie,api_key:api_key}})
+      .then(answer => {
+       this.series = answer.data.results;
+       this.tvSeriesResults();
    })},
 
    showSelected:function(){
-     this.findMovie();
-     this.findTvseries();
+
      this.mergingResults();
    },
 

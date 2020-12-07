@@ -22,25 +22,27 @@
         <header>
           <img src="img/boolflix.png" alt="">
 
-          <input v-model="searched_movie" @keyup.enter="showSelected" placeholder="Find your movie" type="text" name="" value="">
+          <input v-model="searched_movie" @keyup.enter="findMovie();findTvseries();showSelected()" placeholder="Find your movie" type="text" name="" value="">
         </header>
 
         <!-- div  disc box che viene clonato col ciclo per ogni
         elemento in album( album viene riempito da axios) -->
         <div class="movie_box" v-for="element in mergedMedia">
             <div class="cover"><img :src="element.poster_path == 'https://image.tmdb.org/t/p/w342null' ? 'img/na.jpg' : element.poster_path" alt=""> </div>
-            <div class="title">{{element.title}}</div>
-            <div class="original_title">{{element.original_title}}</div>
-            <div class="language"> <img :src="element.original_language" alt=""> </div>
+            <div class="info">
 
-            <div class="stars">
-                <span v-if="element.vote_average == 0" class="white">N/A </span>
-                <i class="fas fa-star" v-if="element.vote_average > 0"></i>
-                <i class="fas fa-star" v-if="element.vote_average > 1"></i>
-                <i class="fas fa-star" v-if="element.vote_average > 2"></i>
-                <i class="fas fa-star" v-if="element.vote_average > 3"></i>
-                <i class="fas fa-star" v-if="element.vote_average > 4"></i>
+              <div class="title">{{element.title}}</div>
+              <div class="original_title">{{element.original_title}}</div>
+              <div class="language"> <img :src="element.original_language" alt=""> </div>
 
+              <div class="stars">
+                  <span v-if="element.vote_average == 0" class="white">N/A </span>
+                  <i class="fas fa-star" v-if="element.vote_average > 0"></i>
+                  <i class="fas fa-star" v-if="element.vote_average > 1"></i>
+                  <i class="fas fa-star" v-if="element.vote_average > 2"></i>
+                  <i class="fas fa-star" v-if="element.vote_average > 3"></i>
+                  <i class="fas fa-star" v-if="element.vote_average > 4"></i>
+              </div>
             </div>
         </div>
       </div>
