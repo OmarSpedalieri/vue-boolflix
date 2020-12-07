@@ -14,20 +14,16 @@
 
   <body>
 
-
-
-
     <main>
       <div id="app">
         <header>
           <img src="img/boolflix.png" alt="">
-
-          <input v-model="searched_movie" @keyup.enter="findMovie();findTvseries();showSelected()" placeholder="Find your movie" type="text" name="" value="">
+          <input v-model="input" @keyup.enter="search_title" placeholder="Find your title" type="text" name="" value="">
         </header>
 
         <!-- div  disc box che viene clonato col ciclo per ogni
         elemento in album( album viene riempito da axios) -->
-        <div class="movie_box" v-for="element in mergedMedia">
+        <div class="movie_box" v-for="element in all_Media">
             <div class="cover"><img :src="element.poster_path == 'https://image.tmdb.org/t/p/w342null' ? 'img/na.jpg' : element.poster_path" alt=""> </div>
             <div class="info">
 
