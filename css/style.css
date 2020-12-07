@@ -30,14 +30,13 @@ input:focus,select:focus,textarea:focus,button:focus {
 }
 
 body{
-  /* display: flex;
-  justify-content: center; */
   color:white;
   width: 100vw;
   height: 100vh;
-  background-color:#1e2d3b;
+  background-color:#292929;
   text-align: center;
 }
+
 header{
   width: 100%;
   min-height: 40px;
@@ -48,10 +47,27 @@ header{
   background-color:black;
 }
 
+header i{
+  font-size: 1.3rem;
+  color:#ababab;
+  margin: 0 10px;
+}
+
+header input{
+  font-weight: bold;
+  color: white;
+  min-height: 30px;
+  border-radius: 5px;
+  background-color: #ababab;
+  border-style: none;
+}
+
+
 header img{
   width: 200px;
   height: 80px;
 }
+
 #app{
   display: flex;
   justify-content: center;
@@ -60,19 +76,15 @@ header img{
   width: 100%;
   height: 90%;
 }
+
 .movie_box{
   position:relative;
- /* width: calc(20% - 10px); */
- /* height: 250px; */
- background-color: #2e3a46;
- margin: 10px 10px;
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- align-items:center;
- transition: all ease-in-out 1s;
-
-
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:center;
+  transition: all ease-in-out 1s;
 }
 
 .stars{
@@ -82,13 +94,11 @@ header img{
 .language img{
   max-width: 25px;
   height: 20px;
-
   border-radius: 10%;
 }
 
 span i >.far{
   border: solid 1px #67708a;
-
 }
 
 .white{
@@ -96,78 +106,37 @@ span i >.far{
 }
 
 .info{
+  padding: 10px;
   background-color: black;
-  opacity: .7;
-  width: 342px;
-  height: 500px;
+  opacity: .75;
+  min-width: 342px;
+  min-height: 500px;
   margin: 10px 10px;
   display:none;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items:center;
+  justify-content: center;
+  align-items:left;
+}
 
+.info div{
+  margin: 5px 0;
+}
 
+.info span{
+  font-weight: bold;
 }
 
 .movie_box:hover  .cover{
-  transform:scale(1.15);
+  transition: all .3s ease-in-out;
+  transform:scale(1.1);
   filter: blur(4px);
 }
+
 .movie_box:hover .info{
-  transform:scale(1.15);
-  z-index: 100;
   display: flex;
+  transform:scale(1.12);
+  z-index: 100;
   position: absolute;
   left:0;
   top:0;
 }
-/*
-
-nav{
-  width: 100%;
-}
-
-.pick{
-  font-size: 20px;
-  margin-right: 20px;
-}
-
-main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.selection{
-  margin: 10px 0;
-  border-style: none;
-
-}
-
-#discografia{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  width: 50%;
-  height: 90%;
-}
-
-.disc_box{
- width: calc(20% - 10px);
- height: 250px;
- background-color: #2e3a46;
- margin: 10px 10px;
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- align-items:center;
-}
-
-.title{
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.author, .year{
-  color: #92989e;
-} */

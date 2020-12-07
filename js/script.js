@@ -14,8 +14,8 @@ var app = new Vue({
     search_title: function(){
 
       // ****** VARIABILI CON API E KEY PER ACCESSO *******
-      let movies = 'https://api.themoviedb.org/3/search/movie?'+ this.api_key;
-      let series = 'https://api.themoviedb.org/3/discover/tv?'+ this.api_key;
+      let movies = 'https://api.themoviedb.org/3/search/movie?&query=&api_key='+ this.api_key;
+      let series = 'https://api.themoviedb.org/3/discover/tv?&query=&api_key='+ this.api_key;
 
       let search_movies = axios.get(movies,{params: {query: this.input}});
       let search_series = axios.get(series,{params: {query: this.input}});
@@ -35,6 +35,7 @@ var app = new Vue({
      this.movies.forEach((film) => {
        film.poster_path = "https://image.tmdb.org/t/p/w342" + film.poster_path;
        film.vote_average = Math.ceil(film.vote_average / 2);
+       film.overview = film.overview.replace(/^(.{100}[^\s]*).*/, "$1") + "\n" + "...";
        if (film.original_language != "") {
          film.original_language = "img/flags/" + film.original_language + ".png";
        }else{
@@ -45,6 +46,7 @@ var app = new Vue({
      this.series.forEach((serie) => {
        serie.poster_path = "https://image.tmdb.org/t/p/w342" + serie.poster_path;
        serie.vote_average = Math.ceil(serie.vote_average / 2);
+       serie.overview = serie.overview.replace(/^(.{100}[^\s]*).*/, "$1") + "\n"+ "...";
        if (serie.original_language != null) {
          serie.original_language = "img/flags/" + serie.original_language + ".png";
        }else{
@@ -52,6 +54,6 @@ var app = new Vue({
        }
      });
 
-    }
+   }
   }
 });
